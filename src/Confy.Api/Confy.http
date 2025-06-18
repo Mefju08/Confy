@@ -1,0 +1,70 @@
+@url = https://localhost:7202/api
+@email = user1@example.com
+@password = hashed-password-121!312
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjMiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJ0ZXN0QGdtYWlsLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiaXNzIjoiY29uZnkiLCJhdWQiOiJjb25meSJ9.pLpF4ut58Adpbc85QJjVUjUthtEZGAafZtOyHxY2iis
+@confirmKey = R@-T=c=_wMf00U=0UsHH7xRO#tL%fU*0(*btWaPq
+@userId = 3
+GET {{url}}/home
+###
+
+POST {{url}}/auth/register
+Content-Type: application/json
+{
+  "email":"{{email}}",
+  "fullName":"Dominik Nowak",
+  "password":"{{password}}"
+}
+###
+
+PATCH {{url}}/auth/confirm
+Content-Type: application/json
+{
+  "userId":{{userId}},
+  "confirmationKey":"{{confirmKey}}"
+}
+###
+
+POST {{url}}/auth/login
+Content-Type: application/json
+{
+  "email":"{{email}}",
+  "password":"{{password}}"
+}
+###
+
+GET {{url}}/users
+Authorization: Bearer {{token}}
+###
+
+POST {{url}}/rooms
+Authorization: Bearer {{token}}
+Content-Type: application/json
+{
+  "name":"VIP room",
+  "capacity":40,
+  "location": "Warsaw",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
+}
+###
+
+GET {{url}}/rooms/all?page=1&pageSize=1
+Authorization: Bearer {{token}}
+###
+
+POST {{url}}/room/1/reservations
+Authorization: Bearer {{token}}
+Content-Type: application/json
+{
+  "startDate":"2025-06-19T15:30:00Z",
+  "endDate":"2025-06-19T19:30:00Z"  
+}
+###
+
+
+PATCH {{url}}/room/1/reservations/4/status
+Authorization: Bearer {{token}}
+Content-Type: application/json
+{
+  "status":"Canceled" 
+}
+###
