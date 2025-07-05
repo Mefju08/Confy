@@ -1,0 +1,65 @@
+@url = https://localhost:7202/api
+@email = user1@example.com
+@password = hashed-password-121!312
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjAxOTdkYjlmLTI3NjktN2FjOS04MmI3LWUzYmIzYzQ5ZmJkNCIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL2VtYWlsYWRkcmVzcyI6InVzZXIxQGV4YW1wbGUuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJpc3MiOiJjb25meSIsImF1ZCI6ImNvbmZ5In0.Yr5QGkMLVvjf6uNebCWsdFMFgkTulfSjjLDzzJMqZys
+@confirmKey = yzAJdgLScKDeLIxQAuCqI9kA-AuZs4my4vd77UVrxQ
+@userId = 0197DB9F-2769-7AC9-82B7-E3BB3C49FBD4
+GET {{url}}/home
+###
+
+POST {{url}}/auth/register
+Content-Type: application/json
+{
+  "email":"{{email}}",
+  "fullName":"Dominik Nowak",
+  "password":"{{password}}"
+}
+###
+
+PATCH {{url}}/auth/confirm
+Content-Type: application/json
+{
+  "userId":"{{userId}}",
+  "confirmationKey":"{{confirmKey}}"
+}
+###
+
+POST {{url}}/auth/login
+Content-Type: application/json
+{
+  "email":"{{email}}",
+  "password":"{{password}}"
+}
+###
+
+GET {{url}}/users
+Authorization: Bearer {{token}}
+###
+
+POST {{url}}/rooms
+Authorization: Bearer {{token}}
+Content-Type: application/json
+{
+  "name":"Basic room",
+  "capacity":10,
+  "location": "Wroclaw",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
+}
+###
+
+GET {{url}}/rooms/all?page=1&pageSize=2
+Authorization: Bearer {{token}}
+###
+
+POST {{url}}/room/0197dba1-043b-7589-9b6a-28508a631b29/reservations
+Authorization: Bearer {{token}}
+Content-Type: application/json
+{
+  "startDate":"2026-06-19T15:30:00Z",
+  "endDate":"2026-06-19T19:30:00Z"  
+}
+###
+
+PATCH {{url}}/room/0197DBA1-043B-7589-9B6A-28508A631B29/reservations/0197DBA3-990E-7CD7-83EA-5075EB3B765B/cancel
+Authorization: Bearer {{token}}
+###

@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36203.30
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confy.Api", "src\Confy.Api\Confy.Api.csproj", "{3AE1E505-BFB5-4507-8F65-EF8E70266A4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confy.Domain", "src\Confy.Domain\Confy.Domain.csproj", "{0A3EF44D-3C56-4ED3-8855-5A806FDF8B37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confy.Infrastructure", "src\Confy.Infrastructure\Confy.Infrastructure.csproj", "{EBC58ABC-2D33-49D3-AAFF-97D3D2868A8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confy.Application", "src\Confy.Application\Confy.Application.csproj", "{5C53FE79-A7ED-4DE4-8CF7-7533E01E2A3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Confy.Abstractions", "src\Confy.Abstractions\Confy.Abstractions.csproj", "{7BDBD8A9-912C-44EA-9D89-917D3BEACC55}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AE1E505-BFB5-4507-8F65-EF8E70266A4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AE1E505-BFB5-4507-8F65-EF8E70266A4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AE1E505-BFB5-4507-8F65-EF8E70266A4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AE1E505-BFB5-4507-8F65-EF8E70266A4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A3EF44D-3C56-4ED3-8855-5A806FDF8B37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A3EF44D-3C56-4ED3-8855-5A806FDF8B37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A3EF44D-3C56-4ED3-8855-5A806FDF8B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A3EF44D-3C56-4ED3-8855-5A806FDF8B37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBC58ABC-2D33-49D3-AAFF-97D3D2868A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBC58ABC-2D33-49D3-AAFF-97D3D2868A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBC58ABC-2D33-49D3-AAFF-97D3D2868A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBC58ABC-2D33-49D3-AAFF-97D3D2868A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C53FE79-A7ED-4DE4-8CF7-7533E01E2A3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C53FE79-A7ED-4DE4-8CF7-7533E01E2A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C53FE79-A7ED-4DE4-8CF7-7533E01E2A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C53FE79-A7ED-4DE4-8CF7-7533E01E2A3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BDBD8A9-912C-44EA-9D89-917D3BEACC55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BDBD8A9-912C-44EA-9D89-917D3BEACC55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BDBD8A9-912C-44EA-9D89-917D3BEACC55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BDBD8A9-912C-44EA-9D89-917D3BEACC55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3AE1E505-BFB5-4507-8F65-EF8E70266A4E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{0A3EF44D-3C56-4ED3-8855-5A806FDF8B37} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{EBC58ABC-2D33-49D3-AAFF-97D3D2868A8A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{5C53FE79-A7ED-4DE4-8CF7-7533E01E2A3F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{7BDBD8A9-912C-44EA-9D89-917D3BEACC55} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {40B6B35A-D607-49EC-A3C2-3D99B8E6EE74}
+	EndGlobalSection
+EndGlobal
